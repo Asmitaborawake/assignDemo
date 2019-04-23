@@ -10,6 +10,10 @@ import UIKit
 
 class WeatherTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var cityName: UILabel!
+    
+    @IBOutlet weak var temp: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

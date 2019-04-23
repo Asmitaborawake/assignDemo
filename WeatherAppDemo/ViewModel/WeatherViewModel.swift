@@ -7,3 +7,28 @@
 //
 
 import Foundation
+import Alamofire
+import ObjectMapper
+
+class WeatherViewModel : NSObject {
+    
+    
+    var WetherData = [WeatherModel]()
+    
+    //fetch wether data
+    func fetchWeatherData(completionHandler: @escaping(Bool, String?) -> Void){
+        
+        NetWorkCallClass.shared.fetchWether() { (response, error) in
+            
+            if response != nil
+            {
+                self.WetherData = Mapper<WeatherModel>().mapArray(JSONArray: response!)
+                
+                completionHandler(true,error)
+                
+            }else{
+                completionHandler(false, error)
+            }
+        }
+    }
+}

@@ -11,10 +11,12 @@ import Foundation
 
 class Utilities : NSObject {
     
-   // let base_URL = "http://api.openweathermap.org/data/2.5/weather?id=707860&units=metric&APPID=2c8700db6c9fde5963c04504c25247b2"
+   
     let appID =  "2c8700db6c9fde5963c04504c25247b2"
     
     func getWeatherURL(appid: String) -> String {
-        return "http://api.openweathermap.org/data/2.5/weather?id=707860&units=metric&\(appid)"
+        return "http://api.openweathermap.org/data/2.5/group?id=524901,703448,2643743&units=metric&APPID=\(appid)"
+        
+        //https://samples.openweathermap.org/data/2.5/group?id=524901,703448,2643743&units=metric&appid=b6907d289e10d714a6e88b30761fae22
     }
 }
